@@ -10,4 +10,5 @@ Graph/Debug/
 *.vcxproj
 *.filters
 *.h
+*.suo
 ReadMe.txt
