@@ -1,0 +1,13 @@
+#folders
+vs/
+Debug/
+ipch/
+Graph/Debug/
+
+#files
+*.sln
+*.db
+*.vcxproj
+*.filters
+*.h
+ReadMe.txt
