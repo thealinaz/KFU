@@ -11,4 +11,5 @@ Graph/Debug/
 *.filters
 *.h
 *.suo
+stdafx.cpp
 ReadMe.txt
