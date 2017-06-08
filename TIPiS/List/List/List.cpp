@@ -1,15 +1,14 @@
 //1.2.3
-//чет не работает
 #include "stdafx.h"
 #include <iostream>
 using namespace std;
 
-struct Node 
+struct Node
 {
 	int data;
 	Node *next;
 
-	Node(int data = 0, Node* next = NULL) 
+	Node(int data = 0, Node* next = NULL)
 	{
 		this->data = data;
 		this->next = next;
@@ -31,21 +30,14 @@ struct List
 		return top != NULL;
 	}
 
-	int length(List list)
-	{
-		int l = 0;
-		for (Node *p = top; p != NULL; p = p->next)
-			l++;
-		return l;
-	}
-
 	void addLast(int data)
 	{
 		if (top != NULL) {
 			for (Node *p = top; p != NULL; p = p->next)
 				end = p;
 			end->next = new Node(data);
-		} else {
+		}
+		else {
 			top = new Node(data, top);
 		}
 	}
@@ -67,7 +59,8 @@ struct List
 					end = prev;
 				delete curr;
 				break;
-			} else {
+			}
+			else {
 				prev = curr;
 				curr = curr->next;
 			}
@@ -103,14 +96,14 @@ struct List
 
 List mergeWithCondition(List list1, List list2)
 {
-	List list = list2;
+	List list = list1;
 	Node *p, *pp;
 	for (p = list1.top; p != NULL; p = p->next)
-			list.addLast(p->data);
-	for (p = list1.top; p != NULL; p = p->next)
-		for (pp = list2.top; pp != NULL; pp = pp->next)
-			if (p->data == pp->data)
-				list.deleteNumber(pp->data);
+		list.addLast(p->data);
+	for (p = list2.top; p != NULL; p = p->next)
+		for (pp = list1.top; pp != NULL; pp = pp->next)
+			if (p->data != pp->data)
+				list.addLast(p->data);
 	return list;
 }
 
@@ -137,5 +130,5 @@ int main()
 	list = mergeWithCondition(list1, list2);
 	list.show();
 	system("pause");
-    return 0;
+	return 0;
 }
