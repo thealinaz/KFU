@@ -1,4 +1,4 @@
-// 2semDemo1binary.cpp: определяет точку входа для консольного приложения.
+// 2semDemo1binary.cpp: Г®ГЇГ°ГҐГ¤ГҐГ«ГїГҐГІ ГІГ®Г·ГЄГі ГўГµГ®Г¤Г  Г¤Г«Гї ГЄГ®Г­Г±Г®Г«ГјГ­Г®ГЈГ® ГЇГ°ГЁГ«Г®Г¦ГҐГ­ГЁГї.
 //
 
 #include "stdafx.h"
@@ -47,7 +47,7 @@ int main()
 	//order
 	for (i = 0; i <= k - 1; i++)
 		for (j = 0; j <= k - 1; j++)
-			if (a[i].experience >= a[j].experience)
+			if (a[i].experience < a[j].experience)
 			{
 				x = a[i];
 				a[i] = a[j];
